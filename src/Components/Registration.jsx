@@ -5,6 +5,7 @@ import { MESSAGES } from "../constant/msg";
 const Registration = () => {
   const [NewReg, setReg] = useState({
     email: "",
+    
   });
   const inputhandel = (e) => {
     setReg({ ...NewReg, [e.target.name]: e.target.value });
