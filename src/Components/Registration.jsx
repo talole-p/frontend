@@ -5,7 +5,7 @@ import { MESSAGES } from "../constant/msg";
 const Registration = () => {
   const [NewReg, setReg] = useState({
     email: "",
-    
+
   });
   const inputhandel = (e) => {
     setReg({ ...NewReg, [e.target.name]: e.target.value });
@@ -27,7 +27,7 @@ const Registration = () => {
           window.alert("Registration successfully");
           localStorage.setItem('itemName',res?.data?.data?.token)
           localStorage.setItem('visit',0)
-          window.location = "/dashboard";
+          // window.location = "/dashboard"; // when online host then someting wrong so comment this line
           
         }
       })
