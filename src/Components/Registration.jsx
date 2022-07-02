@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { RESPONSE_STATUS } from "../constant/response-status";
 import { MESSAGES } from "../constant/msg";
+import { useNavigate } from "react-router-dom"
 const Registration = () => {
+  const navigate = useNavigate()
   const [NewReg, setReg] = useState({
     email: "",
 
@@ -27,8 +29,7 @@ const Registration = () => {
           window.alert("Registration successfully");
           localStorage.setItem('itemName',res?.data?.data?.token)
           localStorage.setItem('visit',0)
-          // window.location = "/dashboard"; // when online host then someting wrong so comment this line
-          
+          navigate("/dashboard")          
         }
       })
       .catch((error) => {
